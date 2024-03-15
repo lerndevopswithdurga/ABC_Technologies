@@ -24,7 +24,7 @@
     - name: Push Docker image
       docker_image:
         name: "durgarani/abc_technologies:{{ build_number }}"
-        source: build
+        source: local
         push: yes
         username: "{{ lookup('env', 'DOCKER_USERNAME') }}"
         password: "{{ lookup('env', 'DOCKER_PASSWORD') }}"
