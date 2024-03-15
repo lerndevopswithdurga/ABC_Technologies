@@ -6,7 +6,7 @@
     build_number: "{{ lookup('env', 'BUILD_NUMBER') }}"
     dockerhub_username: "{{ lookup('env', 'DOCKER_HUB_LOGIN_USR') }}"
     dockerhub_password: "{{ lookup('env', 'DOCKER_HUB_LOGIN_PSW') }}"
-
+ 
   tasks:
     - name: Log in to Docker registry
       docker_login:
