@@ -11,7 +11,8 @@
   tasks:
     - name: Log in to Docker registry
       docker_login:
-        credentials: "{{ docker_login_credential }}"
+        username: "{{ dockerhub_username }}"
+        password: "{{ dockerhub_password }}"
         registry_url: "{{ registry_url }}"
 
     - name: Docker build
