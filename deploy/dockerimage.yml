@@ -1,6 +1,7 @@
 ---
 - name: Build and push Docker image
   hosts: localhost
+  connection: local
   vars:
     build_number: "{{ lookup('env', 'BUILD_NUMBER') }}"
     dockerhub_username: "{{ lookup('env', 'DOCKER_HUB_LOGIN_USR') }}"
