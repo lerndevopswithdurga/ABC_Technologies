@@ -24,4 +24,4 @@
     - name: Push Docker image
       shell:
         cmd: |
-          docker push docker.io/durgarani/abc_technologies:{{ build_number }}
+          docker push durgarani/abc_technologies:{{ build_number }}
