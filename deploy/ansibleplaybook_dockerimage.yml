@@ -22,6 +22,9 @@
         workspace: "{{ lookup('env', 'WORKSPACE') }}"
 
     - name: Push Docker image
-      shell:
-        cmd: |
-          docker push docker.io/durgarani/abc_technologies:{{ build_number }}
+      docker_image:
+        name: "durgarani/abc_technologies:{{ build_number }}"
+        source: build
+        push: yes
+        username: "{{ lookup('env', 'DOCKER_USERNAME') }}"
+        password: "{{ lookup('env', 'DOCKER_PASSWORD') }}"
