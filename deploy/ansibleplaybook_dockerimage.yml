@@ -19,7 +19,7 @@
     - name: Push Docker image
       docker_image:
         name: "durgarani/abc_technologies:{{ build_number }}"
-        source: push
+        source: local
         registry_url: "https://index.docker.io/v1/"
         force_tag: yes
         username: "{{ dockerhub_username }}"
