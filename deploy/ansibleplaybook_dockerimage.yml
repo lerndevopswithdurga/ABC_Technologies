@@ -25,7 +25,6 @@
     - name: Push Docker image
       docker_image:
         name: "durgarani/abc_technologies:{{ build_number }}"
-        source: build
         push: yes
         registry_url: https://index.docker.io/v1/
-        build: "{{ workspace }}"
+        
