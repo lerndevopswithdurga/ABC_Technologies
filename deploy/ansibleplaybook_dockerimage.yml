@@ -23,8 +23,7 @@
         registry_url: https://index.docker.io/v1/
 
     - name: Push Docker image
-      docker_image:
-        name: "durgarani/abc_technologies:{{ build_number }}"
-        push: yes
-        registry_url: https://index.docker.io/v1/
+      shell:
+        cmd: |
+          docker push docker.io/durgarani/abc_technologies:{{ build_number }}
         
