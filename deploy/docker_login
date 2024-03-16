@@ -14,4 +14,5 @@
       docker_image:
         name: durgarani/abc_technologies
         tag: "32"
+        source: local
         push: yes
