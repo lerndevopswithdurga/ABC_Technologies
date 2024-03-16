@@ -4,8 +4,6 @@
   become: true
   vars:
     build_number: "{{ lookup('env', 'BUILD_NUMBER') }}"
-    dockerhub_username: "{{ lookup('env', 'DOCKER_HUB_LOGIN_USR') }}"
-    dockerhub_password: "{{ lookup('env', 'DOCKER_HUB_LOGIN_PSW') }}"
      
   tasks:   
     - name: Docker build
@@ -18,8 +16,8 @@
 
     - name: Log in to Docker registry
       docker_login:
-        username: "{{ dockerhub_username }}"
-        password: "{{ dockerhub_password }}"
+        username: durgarani
+        password: viren@0308
         reauthorize: yes
 
     - name: Push Docker image to DockerHub
