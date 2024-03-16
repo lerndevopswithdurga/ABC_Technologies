@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  become: yes
+  connection: local
+  
+  tasks: 
+
+    - name: Log into DockerHub
+      docker_login:
+        username: durgarani
+        password: viren@0308
+
+    - name: Push Docker image to DockerHub
+      docker_image:
+        name: durgarani/abc_technologies
+        tag: "32"
+        push: yes
