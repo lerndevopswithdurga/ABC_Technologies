@@ -25,7 +25,7 @@
     - name: Push Docker image to DockerHub
       docker_image:
         name: durgarani/abc_technologies
-        tag: {{build_number}}
+        tag: {{ build_number }}
         source: local
         push: yes
         
