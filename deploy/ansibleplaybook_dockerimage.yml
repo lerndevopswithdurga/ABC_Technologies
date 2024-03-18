@@ -20,10 +20,7 @@
         password: viren@0308
         reauthorize: yes
 
-    - name: Push Docker image to DockerHub
-      docker_image:
-        name: durgarani/abc_technologies
-        tag: "{{ build_number }}"
-        source: local
-        push: yes
-        
+    - name: Push Docker image
+      shell:
+        cmd: |
+          docker push docker.io/durgarani/abc_technologies:{{ build_number }}
