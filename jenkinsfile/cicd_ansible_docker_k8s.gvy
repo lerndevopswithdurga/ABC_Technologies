@@ -40,7 +40,7 @@ pipeline {
 	  }
       stage('Deploy-qa') {
 	    steps {
-		    sh 'ansible-playbook  deploy/ansibleplaybook-k8deploy.yml'
+		    sh 'ansible-playbook  deploy/ansibleplaybook-k8sdeploy.yml'
 	    }
       }
     }
