@@ -32,7 +32,7 @@ pipeline {
 	        steps {
                     echo "building image and pushing to dockerhub..."
 	                withDockerRegistry(credentialsId: 'DOCKER_HUB_LOGIN', url: 'https://index.docker.io/v1/') {
-                    sh 'ansible-playbook -i localhost, deploy/dockerbuild-push.yml
+                    sh 'ansible-playbook -i localhost, deploy/dockerbuild-push.yml'
 '
                     }
 	           
