@@ -38,11 +38,10 @@ pipeline {
 	           
 	        }
 	  }
-      stage('Deploy to K8s') {
-  	        steps {
-    	            sh 'sed -i "s/bno/"$BUILD_NUMBER"/g" deploy/k8s_deploy.yml'
-    		        sh 'kubectl apply -f deploy/k8s_deploy.yml'
-	        }
-	    }   
+      stage('Deploy-qa') {
+	    steps {
+		    sh 'ansible-playbook  deploy/ansibleplaybook-k8deploy.yml'
+	    }
+      }
     }
 }		
