@@ -1,5 +1,5 @@
 ---    
-- hosts: qa
+- hosts: "{{ env }}"
   become: yes
   vars:
     build_number: "{{ lookup('env', 'BUILD_NUMBER') }}"
