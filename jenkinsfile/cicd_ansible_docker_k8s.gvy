@@ -40,7 +40,7 @@ pipeline {
 	  }
       stage('Deploy-qa') {
 	    steps {
-		    sh 'ansible-playbook --inventory /etc/ansible/hosts deploy/ansibleplaybook-k8sdeploy.yml'
+		    sh 'ansible-playbook --inventory /tmp/inv deploy/ansibleplaybook-k8sdeploy.yml --extra-vars "env=qa"'
 	    }
       }
     }
