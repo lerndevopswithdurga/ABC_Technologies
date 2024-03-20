@@ -40,7 +40,7 @@ pipeline {
 	  }
       stage('Deploy-qa') {
 	    steps {
-		    sh 'ansible-playbook -i  deploy/ansibleplaybook-k8sdeploy.yml --extra-vars "env=qa"'
+		    sh 'ansible-playbook -i  deploy/ansibleplaybook-k8sdeploy.yml --extra-vars "env=qa" -b'
 	    }
       }
     }
