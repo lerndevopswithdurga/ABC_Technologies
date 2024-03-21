@@ -1,6 +1,7 @@
 ---
 - name: Deploy Kubernetes resources using manifest file
   hosts: qa
+  become: true
   tasks:
     - name: Check if Deployment exists
       community.kubernetes.k8s_info:
@@ -43,6 +44,6 @@
       when: existing_service.exists
 
     - name: Apply manifest file using kubectl
-      command: kubectl apply -f /root/jenkinsagent/workspace/cicd_jenkins_docker_ansible_k8smanifestdeploy_pipeline
+      command: kubectl apply -f 
       args:
         executable: /bin/bash
