@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: abc-technologies
-        image: durgarani/abc_technologies:b_no
+        image: durgarani/abc_technologies:latest
         ports:
         - name: http
           containerPort: 8080
