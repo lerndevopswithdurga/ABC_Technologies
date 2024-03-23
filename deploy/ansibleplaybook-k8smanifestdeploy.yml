@@ -44,6 +44,4 @@
       when: existing_deployment is defined and existing_deployment is not none
 
     - name: Apply manifest file using kubectl
-      command: kubectl apply -f /etc/kubernetes/k8s_deploy.yml
-      args:
-        executable: /bin/bash
+      shell: kubectl apply -f /etc/kubernetes/k8s_deploy.yml
