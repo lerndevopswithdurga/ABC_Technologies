@@ -13,5 +13,6 @@
         state: present
 
     - name: Push Docker image
-      docker_image_push:
+      docker_image:
         name: "durgarani/abc_technologies:latest"
+        state: pushed
