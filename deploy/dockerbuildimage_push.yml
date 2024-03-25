@@ -6,12 +6,11 @@
   tasks:
     - name: Build Docker image
       docker_image:
-        build:
-          path: "{{ lookup('env', 'WORKSPACE') }}"
-          pull: yes
         name: "durgarani/abc_technologies:latest"
+        source: "{{ lookup('env', 'WORKSPACE') }}"
+        pull: yes
         state: present
-
+        
     - name: Push Docker image
       docker_image:
         name: "durgarani/abc_technologies:latest"
