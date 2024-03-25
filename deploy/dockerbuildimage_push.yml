@@ -1,18 +1,17 @@
 ---
-- hosts: localhost  # Assuming you're running Ansible locally
+- hosts: localhost
   connection: local
   become: true
-     
-  tasks:   
-    - name: Docker build
-      shell:
-        cmd: |
-          cd {{ workspace }}
-          docker build --file Dockerfile --tag durgarani/abc_technologies:latest .
-      vars:
-        workspace: "{{ lookup('env', 'WORKSPACE') }}"
-        
+
+  tasks:
+    - name: Build Docker image
+      docker_image:
+        build:
+          path: "{{ lookup('env', 'WORKSPACE') }}"
+          pull: yes
+        name: "durgarani/abc_technologies:latest"
+        state: present
+
     - name: Push Docker image
-      shell:
-        cmd: |
-          docker push docker.io/durgarani/abc_technologies:latest
+      docker_image_push:
+        name: "durgarani/abc_technologies:latest"
